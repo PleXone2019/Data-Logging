@@ -20,8 +20,8 @@ function onEdit() {
  */
 function createGraph() {
   
-    var dataName = 'Sheet1';
-    var chartName = 'Sheet2';
+    var dataName = 'Sheet2';
+    var chartName = 'Sheet3';
     var ss = SpreadsheetApp.getActiveSpreadsheet();
   
     var dataSheet = ss.getSheetByName(dataName);
@@ -40,20 +40,21 @@ function createGraph() {
     // Legend text is taken from entries in row 1
     var startRow = 1;  // What row to start reading at
     var startColumn1 = 1;  // What column to start reading
-    var startColumn2 = 3;  // What column to start reading
-    var numOfColumns = 2;  // Number of columns to read
- 
+    var startColumn2 = 4;  // What column to start reading
+    var numOfColumns1 = 3;  // Number of columns to read
+    var numOfColumns2 = 2;
+  
     // Graph variables
-    var posX1 = 5;  // Column to anchor graph to
+    var posX1 = 2;  // Column to anchor graph to
     var posY1 = 2;  // Row to anchor graph to  
-    var width1 = 500; // Graph Width
+    var width1 = 800; // Graph Width
     var xTitle1 = 'Time'; // XAxis Title
     var yTitle1 = 'Temperature (°C)'; // YAxis Title
     var chartType1 = Charts.ChartType.SCATTER; // Chart Type
   
-    var posX2 = 10;  // Column to anchor graph to
-    var posY2 = 2;  // Row to anchor graph to
-    var width2 = 500; // Graph Width
+    var posX2 = 2;  // Column to anchor graph to
+    var posY2 = 22;  // Row to anchor graph to
+    var width2 = 800; // Graph Width
     var xTitle2 = 'Time'; // XAxis Title
     var yTitle2 = 'Humidity (%)'; // YAxis Title
     var chartType2 = Charts.ChartType.SCATTER; // Chart Type
@@ -63,8 +64,8 @@ function createGraph() {
     var colYellow = '#F2B50F'
     var colGreen = '#00933B'
 
-    var range1 = dataSheet.getRange(startRow, startColumn1, dataSheet.getLastRow(), numOfColumns);
-    var range2 = dataSheet.getRange(startRow, startColumn2, dataSheet.getLastRow(), numOfColumns);
+    var range1 = dataSheet.getRange(startRow, startColumn1, dataSheet.getLastRow(), numOfColumns1);
+    var range2 = dataSheet.getRange(startRow, startColumn2, dataSheet.getLastRow(), numOfColumns2);
   
     //If charts already exist, update them
     if (dataSheet.getCharts().length > 0){
