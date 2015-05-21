@@ -1,2 +1,2 @@
 # Data-Logging
-Scripts I use for logging data into online services
+Scripts I use for data extraction and graphing.
